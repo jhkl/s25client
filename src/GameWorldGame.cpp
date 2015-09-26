@@ -905,7 +905,7 @@ void GameWorldGame::DestroyPlayerRests(const MapPoint pt, const unsigned char ne
             delete no;
 
             // count destroyed building for new_player in endstatistic
-            GAMECLIENT.GetEndStatisticData()->IncreaseValue(EndStatisticData::MIL_DESTROYED_BUILDINGS, new_player);
+            GAMECLIENT.GetEndStatisticData()->IncreaseValue(EndStatisticData::MIL_DESTROYED_BUILDINGS, new_player); // TODO probably -1 here, because indexing starts at 1, instead of 0 (0 = no owner) check this
 
             return;
         }
